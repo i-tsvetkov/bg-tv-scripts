@@ -34,17 +34,10 @@ pactl set-sink-volume 0 $VOLUME%
 
 nova()
 {
-  rtmpdump\
-    --rtmp     'rtmp://edge2.cdn.bg:2010/fls'\
-    --app      'fls'\
-    --flashVer 'LNX 11,8,800,96'\
-    --swfVfy   'http://i.cdn.bg/eflash/jwNTV/player-at.swf'\
-    --pageUrl  'http://i.cdn.bg/live/0OmMKJ4SgY'\
-    --playpath 'ntv_2.stream'\
-    --token    'N0v4TV6#2'\
-    --live --flv - --quiet | mpv --fs --mute=no --volume=100 --cache=10000\
+  mpv --fs --mute=no --volume=100 --cache=10000\
     --title='NovaTV - На живо'\
-    --really-quiet - &> /dev/null
+    --really-quiet \
+    "https://e5-tc.cdn.bg/ntv/fls/ntv_2.stream/chunklist.m3u8?at=4f9fa1f817005def5e368b7b9e896993" &> /dev/null
 }
 
 btv()
@@ -133,4 +126,3 @@ main()
 }
 
 main
-
