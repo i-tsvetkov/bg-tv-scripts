@@ -50,18 +50,10 @@ btv()
 
 bnt()
 {
-  local pageUrl='http://cdn.bg/live/4eViE8vGzI'
-  rtmpdump\
-    --rtmp     'rtmp://edge11.cdn.bg:2020/fls'\
-    --app      'fls'\
-    --flashVer 'LNX 11,8,800,96'\
-    --swfVfy   'http://cdn.bg/eflash/jwplayer510/player.swf'\
-    --pageUrl  "$pageUrl"\
-    --playpath "bnt.stream?at=$(curl -s -H 'Referer: http://tv.bnt.bg/bnt1/16x9/' "$pageUrl" | grep -oP 'bnt.stream\?at=\K\w+')"\
-    --token    'B@1R1st1077'\
-    --live --flv - --quiet | mpv --fs --mute=no --volume=100 --cache=10000\
+  mpv --fs --mute=no --volume=100 --cache=10000\
     --title='BNT - На живо'\
-    --really-quiet - &> /dev/null
+    --really-quiet \
+    "https://clb.cdn.bg/bnt1/fls/bnt1.stream/playlist.m3u8?at=4f9fa1f817005def5e368b7b9e896993" &> /dev/null
 }
 
 go_tv()
