@@ -46,7 +46,7 @@ btv()
   mpv --fs --mute=no --volume=100 --cache=10000\
     --title='BTV - На живо'\
     --really-quiet \
-    "http://46.10.150.112/alpha/alpha/playlist.m3u8" &> /dev/null
+    "http://46.10.150.114/alpha/alpha/playlist.m3u8" &> /dev/null
 }
 
 bnt()
