@@ -20,7 +20,7 @@ function btv() {
     -H 'Cache-Control: no-cache' \
     --compressed \
     --data "username=${BTV_USERNAME}&password=${BTV_PASSWORD}" \
-    --cookie-jar "$cookiejar"
+    --cookie-jar "$cookiejar" &> /dev/null
 
   timestamp_in_milliseconds="$(date '+%s%3N')"
 
