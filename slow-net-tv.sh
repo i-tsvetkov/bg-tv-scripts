@@ -1,6 +1,7 @@
 #!/bin/bash
-set -euxo pipefail
+set -euo pipefail
 
+# shellcheck source=example.btv.credentials.sh
 source ~/.btv.credentials.sh
 
 source functions/bnt.sh
@@ -26,9 +27,9 @@ function main() {
     for tv in "${TV_CHANNELS[@]}"
     do
       case "$tv" in
-        nova) nova ;;
-        btv)  btv ;;
-        bnt)  bnt ;;
+        nova) nova || true ;;
+        btv)  btv  || true ;;
+        bnt)  bnt  || true ;;
         *)    exit 1 ;;
       esac
 

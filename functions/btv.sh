@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euxo pipefail
+set -euo pipefail
 
 function btv() {
   cookiejar="$(mktemp '/tmp/tmp.btv.cookiejar.XXXXXXXXXX')"
